@@ -12,12 +12,13 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/', function () {
         return view('dashboard'); })->name('dashboard');
+        Route::get('/sample-print', [DocumentController::class, 'print'])->name('print');
 
-    Route::get('/setup', [DocumentController::class, 'setup'])->name('setup');
-    Route::post('/setup', [DocumentController::class, 'store'])->name('store');
-    Route::get('/request', [DocumentController::class, 'request'])->name('request');
-    Route::post('/request', [DocumentController::class, 'requestStore'])->name('requestStore');
-    Route::get('/report', [DocumentController::class, 'report'])->name('report');
+        Route::get('/setup', [DocumentController::class, 'setup'])->name('setup');
+        Route::post('/setup', [DocumentController::class, 'store'])->name('store');
+        Route::get('/request', [DocumentController::class, 'request'])->name('request');
+        Route::post('/request', [DocumentController::class, 'requestStore'])->name('requestStore');
+        Route::get('/report', [DocumentController::class, 'report'])->name('report');
 });
 
 require __DIR__.'/auth.php';
