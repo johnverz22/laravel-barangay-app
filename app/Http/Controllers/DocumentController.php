@@ -8,7 +8,12 @@ use Barryvdh\DomPDF\Facade\Pdf;
 
 class DocumentController extends Controller
 {
-    public function print(){
+    public function setup()
+    {
+        return view('document.setup');
+    }
+    public function print()
+    {
 
         //test on browser first
         //return view('print');
